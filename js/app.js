@@ -87,7 +87,13 @@ UI.prototype.mostrarResultado = function(total, seguro){
     <p class="font-bold">Total: ${total}</p>
     `;
     const resultadoDiv = document.querySelector('#resultado');
-    resultadoDiv.appendChild(div);
+    //mostrar spinner
+    const spinner = document.querySelector('#cargando');
+    spinner.style.display = 'block'
+    setTimeout(() => {
+        spinner.style.display = 'none'; //se borra spinner
+        resultadoDiv.appendChild(div);//se muestra el resultado
+    }, 3000);
 }
 
 //instanciar
